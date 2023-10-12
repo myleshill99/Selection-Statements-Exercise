@@ -2,34 +2,34 @@
 
 namespace SelectionStatementExercise
 {
-   class Program
-    static void Main(string[] args)
+    class Program
     {
-
-        //Number Guessing Game 
-        var r = new Random();
-        var favNumber = r.Next(1 - 1000);
-    
-        
-        var userInput = int.Parse(Console.ReadLine());
+        static void Main(string[] args)
         {
-            Console.WriteLine("Pick a number from 1- 1000");
-            userInput = int.Parse(Console.ReadLine());
 
-          if (userInput < favNumber)
-         {
+            //Number Guessing Game 
+            var r = new Random();
+            var favNumber = r.Next(1 , 1000);
+            int userInput;
 
-          }
-             Console.WriteLine($"(userInput) is too low");
-         {
-            else if (userInput > favNumber) ;
-            }
-            Console.WriteLine($"{userInput} is too high");
+            do
             {
-                Console.WriteLine("You guessed it!");
-            }
+                Console.WriteLine("Pick a number from 1- 1000");
+                userInput = int.Parse(Console.ReadLine());
 
-        }  while (userInput != favNumber) ;
-      }
-     }
- }
+                if (userInput < favNumber)
+                {
+                    Console.WriteLine($"{userInput} is too low");
+                }
+                else if (userInput > favNumber)
+                {
+                    Console.WriteLine($"{userInput} is too high");
+                }
+                else
+                {
+                    Console.WriteLine("You guessed it!");
+                }
+            } while (favNumber != userInput);
+        }
+    }
+}
